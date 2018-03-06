@@ -1,0 +1,8 @@
+[alias]
+	co = checkout
+	st = status
+        l = log --pretty=format:'%C(yellow)%h %Cblue%>(12,trunc)%ad %Cgreen%<(7)%aN%C(auto)%d %s' --date=relative
+	dc = diff --cached
+        la = !git l --all --decorate --graph
+[core]
+        abbrev = 8
