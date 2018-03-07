@@ -30,7 +30,12 @@ if command_exists nvim ; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# load nvm "on-demand"
+# https://github.com/creationix/nvm/issues/539#issuecomment-245791291
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+
 
 set -o vi
 
