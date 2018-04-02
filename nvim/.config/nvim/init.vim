@@ -20,9 +20,10 @@ Plug 'tweekmonster/django-plus.vim'
 
 " simple pretty statusline
 Plug 'itchyny/lightline.vim'
+Plug 'daviesjamie/vim-base16-lightline'
 
-" simple 16 color colorscheme
-Plug 'noahfrederick/vim-noctu'
+" base16 colorschemes
+Plug 'chriskempson/base16-vim'
 
 " opening files etc.
 Plug 'scrooloose/nerdtree'
@@ -69,16 +70,20 @@ let test#python#runner = 'pytest'      " Always use pytest to run python tests
 " use tab for completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-colorscheme noctu
+let base16colorspace=256
 
-"if has('nvim')
-"  set termguicolors
-"else
-"  set t_Co=256
-"end
+" use base16-shell to create the colorscheme file
+source ~/.vimrc_background
 
-" make autocomplete menu more visible
-highlight Pmenu ctermbg=darkgrey
+let g:lightline = {
+      \ 'colorscheme': 'base16'
+      \ }
+
+if has('nvim')
+  set termguicolors
+else
+  set t_Co=256
+end
 
 set clipboard=unnamedplus " Use system clipboard
 
