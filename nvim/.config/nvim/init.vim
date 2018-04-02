@@ -60,7 +60,10 @@ set completeopt-=preview               " do not open window for function params 
 let g:jedi#completions_enabled = 0     " do not use vim-jedi completions
 let g:deoplete#enable_at_startup = 1
 
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {
+      \  'python': ['flake8'],
+      \  'javascript': ['eslint'],
+      \}
 let test#python#runner = 'pytest'      " Always use pytest to run python tests
 
 " use tab for completion
