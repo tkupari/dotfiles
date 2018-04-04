@@ -27,7 +27,7 @@ Plug 'chriskempson/base16-vim'
 
 " opening files etc.
 Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 " autocomplete
