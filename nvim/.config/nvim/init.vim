@@ -66,6 +66,7 @@ let g:ale_linters = {
       \  'javascript': ['eslint'],
       \}
 let test#python#runner = 'pytest'      " Always use pytest to run python tests
+let test#python#pytest#options = '--reuse-db'
 
 " use tab for completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
