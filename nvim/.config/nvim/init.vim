@@ -134,7 +134,7 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
 " swap to previous buffer with ,,
-nnoremap <leader><leader> <C-^> 
+nnoremap <leader><leader> <C-^>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 
