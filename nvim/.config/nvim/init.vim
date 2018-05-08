@@ -122,7 +122,7 @@ nnoremap <esc><esc> :noh<CR>
 nnoremap / /\v
 vnoremap / /\v
 
-" ruby-test
+" vim-test
 nnoremap <silent> <leader>t :TestNearest<CR>
 nnoremap <silent> <leader>T :TestFile<CR>
 nnoremap <silent> <leader>a :TestSuite<CR>
