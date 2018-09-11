@@ -13,6 +13,8 @@ export GIT_EDITOR=vim
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
+. /usr/local/etc/profile.d/z.sh
+
 if [ -f /usr/local/share/liquidprompt ]; then
   . /usr/local/share/liquidprompt
 fi
@@ -54,5 +56,4 @@ export LANG=en_US.UTF-8
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-. /usr/local/etc/profile.d/z.sh
 eval "$(pyenv init -)"
