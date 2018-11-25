@@ -1,7 +1,3 @@
-# Fix nvm with tmux
-# https://github.com/creationix/nvm/issues/1652
-PATH="/usr/local/bin:$(getconf PATH)"
-
 export PYTHONSTARTUP=~/.pythonrc
 export CLICOLOR=true
 
