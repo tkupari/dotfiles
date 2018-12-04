@@ -84,8 +84,6 @@ else
   set t_Co=256
 end
 
-set clipboard=unnamedplus " Use system clipboard
-
 set number
 set relativenumber
 set mouse=""
