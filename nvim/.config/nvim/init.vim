@@ -54,8 +54,7 @@ Plug 'w0rp/ale'
 call plug#end()
 
 " pip install neovim in these virtualens
-let g:python3_host_prog=expand("~/.virtualenvs/neovim3/bin/python")
-let g:python_host_prog=expand("~/.virtualenvs/neovim/bin/python")
+let g:python3_host_prog=expand("~/.local/share/virtualenvs/neovim3/bin/python")
 
 set completeopt-=preview               " do not open window for function params etc
 let g:jedi#completions_enabled = 0     " do not use vim-jedi completions
