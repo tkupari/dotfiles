@@ -8,7 +8,9 @@ export GIT_EDITOR=vim
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
-. /usr/local/etc/profile.d/z.sh
+if [ -f /usr/local/etc/profile.d/z.sh ]; then
+  . /usr/local/etc/profile.d/z.sh
+fi
 
 if [ -f /usr/local/share/liquidprompt ]; then
   . /usr/local/share/liquidprompt
