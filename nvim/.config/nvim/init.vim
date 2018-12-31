@@ -17,6 +17,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'tpope/vim-rails'
 Plug 'tweekmonster/django-plus.vim'
+Plug 'nathanielc/vim-tickscript'
 
 " simple pretty statusline
 Plug 'itchyny/lightline.vim'
