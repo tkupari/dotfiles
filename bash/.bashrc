@@ -60,4 +60,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Only load liquidprompt in interactive shells, not from a script or from scp
-echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+if [ -f /usr/share/liquidprompt/liquidprompt ]; then
+  echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+fi
+
+export PATH=$PATH:~/go/bin
