@@ -72,3 +72,6 @@ export PATH=$PATH:~/go/bin
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+# disable ctrl-s
+stty -ixon
