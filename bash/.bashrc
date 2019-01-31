@@ -1,6 +1,7 @@
 [[ $- != *i* ]] && return
 
 export CLICOLOR=true
+alias ls='ls --color=auto'
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
