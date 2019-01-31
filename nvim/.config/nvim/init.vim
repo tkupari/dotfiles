@@ -64,6 +64,8 @@ let g:ale_linters = {
       \  'python': ['flake8'],
       \  'javascript': ['eslint'],
       \}
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_text_changed = 'normal'
 let test#python#runner = 'pytest'      " Always use pytest to run python tests
 
 " use tab for completion
