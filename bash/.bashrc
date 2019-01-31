@@ -70,3 +70,5 @@ export PATH=$PATH:~/go/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
