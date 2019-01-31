@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+export PATH=$PATH:~/bin
+
 export CLICOLOR=true
 alias ls='ls --color=auto'
 
