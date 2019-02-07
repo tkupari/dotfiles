@@ -1,0 +1,2 @@
+#! /usr/bin/env sh
+xrandr -q | grep " connected" | awk '{print $1}' | grep -v "eDP-1" | head -1

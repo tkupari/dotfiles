@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+url=$(grep '\[' ~/bookmarks.md  | rofi -dmenu -i -p 'Bookmark' | sed 's/^.*\[.*\](\(.*\))$/\1/')
+[ -n "$url" ] && xdg-open $url

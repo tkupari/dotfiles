@@ -1,0 +1,2 @@
+#! /usr/bin/env sh
+sed -i 's/width.*/width=800/;s/height.*/height=600/' /home/teemu/snap/spotify/current/.config/spotify/prefs

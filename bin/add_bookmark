@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+url=$(echo "" | rofi -dmenu -p "New bookmark" -lines 0)
+if [ -n "$url" ]; then
+  title=$(page_title.py $url)
+
+  echo "[$title]($url)" >> ~/bookmarks.md
+fi
