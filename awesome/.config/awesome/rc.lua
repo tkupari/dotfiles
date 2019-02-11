@@ -357,7 +357,7 @@ globalkeys = gears.table.join(
         awful.util.spawn("rofi -show drun")
       end),
 
-    awful.key({ modkey }, "k",
+    awful.key({ modkey, "Ctrl" }, "k",
       function()
         mykeyboardlayout.next_layout()
       end),
@@ -379,7 +379,7 @@ globalkeys = gears.table.join(
         awful.util.spawn("output_laptop_4k")
       end),
 
-    awful.key({ modkey }, "F12",
+    awful.key({ modkey }, "BackSpace",
       function()
         awful.util.spawn("lock_screen")
       end)
