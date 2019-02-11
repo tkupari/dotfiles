@@ -40,9 +40,6 @@ export NVM_DIR="$HOME/.nvm"
 alias node='unalias node ; unalias npm ; nvm use default ; node $@'
 alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
-
-set -o vi
-
 # Add all sensitive stuff to different file
 if [ -f ~/.profile_secrets ]; then
   . ~/.profile_secrets
