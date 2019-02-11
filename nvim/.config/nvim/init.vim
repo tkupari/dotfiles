@@ -6,7 +6,7 @@ set hidden        " allow buffer switching if there are changes
 " disable some vim-polygot packages to prevent conflicts
 let g:polyglot_disabled = ['elixir', 'elm', 'ruby']
 
-call plug#begin()
+call plug#begin('~/.local/share/nvim/plugged')
 " Basic syntax etc for most languages
 Plug 'sheerun/vim-polyglot'
 
