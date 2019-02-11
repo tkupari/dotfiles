@@ -1,0 +1,5 @@
+image=/tmp/i3lock.png
+scrot $image
+convert $image -scale 5% -scale 2000% -colorspace Gray $image
+i3lock -i $image
+rm $image

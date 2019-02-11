@@ -377,6 +377,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "F9",
       function()
         awful.util.spawn("output_laptop_4k")
+      end),
+
+    awful.key({ modkey }, "F12",
+      function()
+        awful.util.spawn("lock_screen")
       end)
 )
 
