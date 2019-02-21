@@ -69,22 +69,22 @@ abstracts = {
   timestamp = "$*";
 
   # any kind of text that needs hilighting, default is to bold
-  hilight = "%_$*%_";
+  hilight = "$*";
 
   # any kind of error message, default is bright red
   error = "%r$*%n";
 
   # channel name is printed
-  channel = "%_$*%_";
+  channel = "$*";
 
   # nick is printed
-  nick = "%_$*%_";
+  nick = "$*";
 
   # nick host is printed
   nickhost = "[$*]";
 
   # server name is printed
-  server = "%_$*%_";
+  server = "$*";
 
   # some kind of comment is printed
   comment = "[$*]";
@@ -138,7 +138,7 @@ abstracts = {
 
   # $0 = nick mode, $1 = nick
   ownmsgnick = "{msgnick $0 $1-}";
-  ownnick = "%_$*%n";
+  ownnick = "$*%n";
 
   # public message in channel, $0 = nick mode, $1 = nick
   pubmsgnick = "{msgnick $0 $1-}";
@@ -163,7 +163,7 @@ abstracts = {
 
   # own private message in query
   ownprivmsgnick = "{msgnick  $*}";
-  ownprivnick = "%_$*%n";
+  ownprivnick = "$*%n";
 
   # private message in query
   privmsgnick = "{msgnick  %r$*%n}";
@@ -173,7 +173,7 @@ abstracts = {
   ##
 
   # used internally by this theme
-  action_core = "%_ * $*%n";
+  action_core = " * $*%n";
 
   # generic one that's used by most actions
   action = "{action_core $*} ";
@@ -185,7 +185,7 @@ abstracts = {
   ownaction_target = "{action_core $0}%w:%c$1%n ";
 
   # private action sent by others
-  pvtaction = "%_ (*) $*%n ";
+  pvtaction = " (*) $*%n ";
   pvtaction_query = "{action $*}";
 
   # public action sent by others
@@ -211,9 +211,9 @@ abstracts = {
   ctcp = "%g$*%n";
 
   # wallops
-  wallop = "%_$*%n: ";
+  wallop = "$*%n: ";
   wallop_nick = "%n$*";
-  wallop_action = "%_ * $*%n ";
+  wallop_action = " * $*%n ";
 
   # netsplits
   netsplit = "%r$*%n";
@@ -221,7 +221,7 @@ abstracts = {
 
   # /names list
   names_prefix = "";
-  names_nick = "[%_$0%_$1-] ";
+  names_nick = "[$0$1-] ";
   names_nick_op = "{names_nick $*}";
   names_nick_halfop = "{names_nick $*}";
   names_nick_voice = "{names_nick $*}";
@@ -230,19 +230,19 @@ abstracts = {
 
   # DCC
   dcc = "%g$*%n";
-  dccfile = "%_$*%_";
+  dccfile = "$*";
 
   # DCC chat, own msg/action
   dccownmsg = "[%r$0%w($1-%w)%n] ";
   dccownnick = "%r$*%n";
-  dccownquerynick = "%_$*%n";
+  dccownquerynick = "$*%n";
   dccownaction = "{action $*}";
   dccownaction_target = "{action_core $0}%w:%c$1%n ";
 
   # DCC chat, others
   dccmsg = "[%g$1-%w(%g$0%w)%n] ";
   dccquerynick = "%g$*%n";
-  dccaction = "%_ (*dcc*) $*%n %|";
+  dccaction = " (*dcc*) $*%n %|";
 
   ##
   ## statusbar
