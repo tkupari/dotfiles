@@ -27,7 +27,6 @@ Plug 'daviesjamie/vim-base16-lightline'
 Plug 'chriskempson/base16-vim'
 
 " opening files etc.
-Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
@@ -48,7 +47,6 @@ Plug 'janko-m/vim-test'
 
 " git stuff
 Plug 'tpope/vim-fugitive'
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 " linting
 Plug 'w0rp/ale'
