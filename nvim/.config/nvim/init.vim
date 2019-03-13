@@ -146,6 +146,10 @@ nmap <buffer> <F3> <Plug>(xmpfilter-mark)
 xmap <buffer> <F3> <Plug>(xmpfilter-mark)
 imap <buffer> <F3> <Plug>(xmpfilter-mark)
 
+" ALE bindings
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " get fzf files with ag, it will use gitignore to hide files
 " we also want to see dotfiles, so use --hidden
 " note that .git needs to be added to .agignore in this case
