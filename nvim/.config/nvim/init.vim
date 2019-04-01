@@ -153,4 +153,4 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " get fzf files with ag, it will use gitignore to hide files
 " we also want to see dotfiles, so use --hidden
 " note that .git needs to be added to .agignore in this case
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore-dir node_modules'
