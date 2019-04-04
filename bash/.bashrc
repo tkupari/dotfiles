@@ -61,3 +61,6 @@ export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 # disable ctrl-s
 stty -ixon
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
