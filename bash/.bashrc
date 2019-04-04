@@ -13,7 +13,6 @@ fi
 export EDITOR=vim
 export GIT_EDITOR=vim
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
@@ -36,13 +35,6 @@ if command_exists nvim ; then
   alias vim='nvim'
 fi
 
-export NVM_DIR="$HOME/.nvm"
-# load nvm "on-demand"
-# https://github.com/creationix/nvm/issues/539#issuecomment-245791291
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
-
 # Add all sensitive stuff to different file
 if [ -f ~/.profile_secrets ]; then
   . ~/.profile_secrets
@@ -58,19 +50,12 @@ export LANG=en_US.UTF-8
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 if [ -f /usr/share/liquidprompt/liquidprompt ]; then
   # Only load liquidprompt in interactive shells, not from a script or from scp
   echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
 fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
