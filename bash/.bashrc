@@ -2,8 +2,11 @@
 
 export PATH=$PATH:~/bin
 
-export CLICOLOR=true
-alias ls='ls --color=auto'
+if [[ $OSTYPE == "darwin"* ]]; then
+  export CLICOLOR=true
+elif [[ $OSTYPE == "linux-gnu" ]]; then
+  alias ls='ls --color=auto'
+fi
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
@@ -59,9 +62,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Only load liquidprompt in interactive shells, not from a script or from scp
-echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
-
+if [ -f /usr/share/liquidprompt/liquidprompt ]; then
+  # Only load liquidprompt in interactive shells, not from a script or from scp
+  echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 
