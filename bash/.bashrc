@@ -15,6 +15,10 @@ export GIT_EDITOR=vim
 
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
+if [ -f ~/.config/z/z.sh ]; then
+  . ~/.config/z/z.sh
+fi
+
 if [ -f /usr/local/etc/profile.d/z.sh ]; then
   . /usr/local/etc/profile.d/z.sh
 fi
