@@ -177,7 +177,7 @@ bindsym $mod+F7 exec ~/bin/output_both
 bindsym $mod+F8 exec ~/bin/output_laptop
 bindsym $mod+F9 exec ~/bin/output_laptop_4k
 
-bindsym $mod+shift+BackSpace exec ~/bin/lock_screen
+bindsym $mod+shift+BackSpace exec i3lock -c 000000
 bindsym $mod+Mod1+space exec ~/bin/toggle_keyboard
 
 exec --no-startup-id nm-applet
