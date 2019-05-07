@@ -8,7 +8,7 @@ let g:polyglot_disabled = ['elixir', 'elm', 'ruby']
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Basic syntax etc for most languages
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " language plugins
 Plug 'ElmCast/elm-vim'
