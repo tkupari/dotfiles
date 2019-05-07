@@ -183,6 +183,7 @@ bindsym $mod+Mod1+space exec ~/bin/toggle_keyboard
 exec --no-startup-id nm-applet
 exec compton -b --config .config/compton/compton.conf
 
+hide_edge_borders smart
 
 # Basic bar configuration using the Base16 variables.
 bar {
