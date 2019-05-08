@@ -181,6 +181,7 @@ bindsym $mod+shift+BackSpace exec i3lock -c 000000
 bindsym $mod+Mod1+space exec ~/bin/toggle_keyboard
 
 exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 exec compton -b --config .config/compton/compton.conf
 
 hide_edge_borders smart
