@@ -177,12 +177,14 @@ bindsym $mod+F7 exec ~/bin/output_both
 bindsym $mod+F8 exec ~/bin/output_laptop
 bindsym $mod+F9 exec ~/bin/output_laptop_4k
 
-bindsym $mod+shift+BackSpace exec i3lock -c 000000
+# suspend screen, it will lock the computer via xss-lock
+bindsym $mod+ctrl+l exec --no-startup-id sleep 1 && xset dpms force suspend
 bindsym $mod+Mod1+space exec ~/bin/toggle_keyboard
 
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec compton -b --config .config/compton/compton.conf
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 
 hide_edge_borders smart
 
