@@ -9,6 +9,7 @@ elif [[ $OSTYPE == "linux-gnu" ]]; then
 fi
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f /etc/bash_completion ] && . /etc/bash_completion
 
 export EDITOR=vim
 export GIT_EDITOR=vim
