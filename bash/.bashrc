@@ -46,6 +46,7 @@ if [ -f ~/.profile_secrets ]; then
 fi
 
 alias t='tmux attach || tmux new'
+alias xclip='xclip -selection clipboard'
 
 # fix python locale.getlocale
 export LC_ALL=en_US.UTF-8
