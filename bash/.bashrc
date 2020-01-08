@@ -40,6 +40,10 @@ if command_exists nvim ; then
   alias vim='nvim'
 fi
 
+if command_exists exa ; then
+  alias ls='exa'
+fi
+
 # Add all sensitive stuff to different file
 if [ -f ~/.profile_secrets ]; then
   . ~/.profile_secrets
