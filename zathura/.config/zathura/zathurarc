@@ -1,0 +1,4 @@
+set recolor true
+set default-bg \#1d2021
+set recolor-darkcolor \#d5c4a1
+set recolor-lightcolor \#1d2021
