@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+set -o vi
+
 export PATH=$PATH:~/bin
 
 if [[ $OSTYPE == "darwin"* ]]; then
