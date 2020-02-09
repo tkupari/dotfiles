@@ -19,6 +19,7 @@ Plug 'tpope/vim-rails'
 Plug 'tweekmonster/django-plus.vim'
 Plug 'nathanielc/vim-tickscript'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'tpope/vim-commentary'
 
 " simple pretty statusline
 Plug 'itchyny/lightline.vim'
