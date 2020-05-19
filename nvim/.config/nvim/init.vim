@@ -64,6 +64,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ale_linters = {
       \  'python': ['flake8'],
       \  'javascript': ['eslint'],
+      \  'scala': [],
       \}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
