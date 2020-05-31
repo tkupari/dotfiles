@@ -40,4 +40,5 @@ main = do
         ] `additionalKeysP`
         [ ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+ unmute")
         , ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%- unmute")
+        , ("M-S-<Space>", spawn "toggle_keyboard")
         ]

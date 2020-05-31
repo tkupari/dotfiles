@@ -1,12 +1,19 @@
 #! /usr/bin/env bash
-if [ -f ~/.config/toggle_keyboard ]; then
-  rm ~/.config/toggle_keyboard
-  setxkbmap -layout us
-  notify-send "US layout"
+if [[ -n "$1" ]]; then
+  setxkbmap $1
 else
-  touch ~/.config/toggle_keyboard
-  setxkbmap -layout fi
-  notify-send "Finnish layout"
+  layout=$(setxkbmap -query | awk 'END{print $2}')
+  case $layout in
+    us)
+      setxkbmap fi
+      ;;
+# add other layouts here
+#     fi)
+#       setxkbmap se
+#       ;;
+    *)
+    setxkbmap us
+    ;;
+  esac
 fi
-
 
