@@ -13,7 +13,7 @@ myManageHook = composeAll
 
 myDmenu = "dmenu_run -nb \"#1d2021\" -sb \"#fabd2f\" -nf \"#d5c4a1\" -sf \"#1d2021\" -fn \"Hack:pixelsize=16\""
 myModMask = mod4Mask
-myWorkspaces = ["web", "term"] ++ map show [3..9]
+myWorkspaces = ["web", "term", "slack"] ++ map show [4..9]
 myNormalBorderColor = "#665c54"
 myFocusedBorderColor = "#d5c4a1"
 
