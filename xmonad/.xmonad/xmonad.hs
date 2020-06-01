@@ -59,6 +59,8 @@ main = do
         ] `additionalKeysP`
         [ ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+ unmute")
         , ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%- unmute")
+        , ("<XF86MonBrightnessUp>", spawn "lux -a 10%")
+        , ("<XF86MonBrightnessDown>", spawn "lux -s 10%")
         , ("M-S-<Space>", spawn "toggle_keyboard")
         , ("M-i", namedScratchpadAction myScratchpads "irssi")
         , ("M-m", namedScratchpadAction myScratchpads "spotify")
