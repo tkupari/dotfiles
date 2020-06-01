@@ -51,7 +51,7 @@ main = do
         , normalBorderColor = myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         } `additionalKeys`
-        [ ((myModMask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+        [ ((myModMask .|. shiftMask, xK_z), spawn "dunst_lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((myModMask, xK_b), sendMessage ToggleStruts)
         , ((0, xK_Print), spawn "scrot")

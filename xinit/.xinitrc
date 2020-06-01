@@ -37,8 +37,6 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
 
 pasystray &
 nm-applet &
-# xsetroot -solid midnightblue
-xscreensaver -no-splash &
 xrandr -s 1920x1080
 xsetroot -cursor_name left_ptr
 picom &
