@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders(smartBorders)
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 import System.IO
@@ -21,7 +22,7 @@ main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ docks defaultConfig
         { manageHook = myManageHook <+> manageHook defaultConfig -- make sure to include myManageHook definition from above
-        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , layoutHook = avoidStruts $ smartBorders( layoutHook defaultConfig )
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
