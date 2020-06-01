@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 notify-send "DUNST_COMMAND_PAUSE"
-i3lock --nofork -c 000000
+xsecurelock
 notify-send "DUNST_COMMAND_RESUME"
