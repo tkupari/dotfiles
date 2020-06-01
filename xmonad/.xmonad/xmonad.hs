@@ -7,7 +7,7 @@ import System.IO
 
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
-    , className =? "Vncviewer" --> doFloat
+    , resource =? "slack"      --> doShift "3:slack"
     , resource =? "nm-connection-editor" --> doFloat
     ]
 
