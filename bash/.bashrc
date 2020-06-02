@@ -26,8 +26,8 @@ if [ -f /usr/local/etc/profile.d/z.sh ]; then
   . /usr/local/etc/profile.d/z.sh
 fi
 
-if [ -f /usr/local/share/liquidprompt ]; then
-  . /usr/local/share/liquidprompt
+if [ -f /usr/bin/liquidprompt ]; then
+  . /usr/bin/liquidprompt
 fi
 
 # Helper to see if a command exists
