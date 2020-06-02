@@ -32,17 +32,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
-" autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'slashmili/alchemist.vim'
-Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-jedi'
+" IntelliSense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " run tests easily
 Plug 'janko-m/vim-test'
@@ -50,8 +41,6 @@ Plug 'janko-m/vim-test'
 " git stuff
 Plug 'tpope/vim-fugitive'
 
-" linting
-Plug 'w0rp/ale'
 call plug#end()
 
 " pip install neovim in these virtualens
