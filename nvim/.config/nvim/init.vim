@@ -4,21 +4,12 @@ syntax on
 set hidden        " allow buffer switching if there are changes
 
 " disable some vim-polygot packages to prevent conflicts
-let g:polyglot_disabled = ['python', 'elixir', 'elm', 'ruby']
 
 call plug#begin('~/.local/share/nvim/plugged')
 " Basic syntax etc for most languages
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
-" language plugins
-Plug 'ElmCast/elm-vim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'vim-ruby/vim-ruby'
-Plug 't9md/vim-ruby-xmpfilter'
-Plug 'tpope/vim-rails'
-Plug 'tweekmonster/django-plus.vim'
-Plug 'nathanielc/vim-tickscript'
-Plug 'Vimjas/vim-python-pep8-indent'
+" commenting
 Plug 'tpope/vim-commentary'
 
 " simple pretty statusline
