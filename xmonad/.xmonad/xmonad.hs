@@ -58,8 +58,9 @@ main = do
         , ((0, xK_Print), spawn "scrot")
         , ((myModMask, xK_p), spawn myDmenu)
         ] `additionalKeysP`
-        [ ("<XF86AudioRaiseVolume>", spawn "amixer -q sset Master 3%+ unmute")
-        , ("<XF86AudioLowerVolume>", spawn "amixer -q sset Master 3%- unmute")
+        [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
+        , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
+        , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
         , ("<XF86MonBrightnessUp>", spawn "lux -a 10%")
         , ("<XF86MonBrightnessDown>", spawn "lux -s 10%")
         , ("M-S-<Space>", spawn "toggle_keyboard")
