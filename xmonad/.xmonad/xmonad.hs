@@ -1,6 +1,7 @@
 import XMonad
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders(smartBorders)
 import XMonad.Util.Run(spawnPipe)
@@ -40,7 +41,7 @@ myScratchpads = [ NS "irssi" spawnIrssi findIrssi manageIrssi
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ docks defaultConfig
-        { manageHook = myManageHook <+> namedScratchpadManageHook myScratchpads <+> manageHook defaultConfig -- make sure to include myManageHook definition from above
+        { manageHook = insertPosition Below Newer <+> myManageHook <+> namedScratchpadManageHook myScratchpads <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ smartBorders( layoutHook defaultConfig )
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
