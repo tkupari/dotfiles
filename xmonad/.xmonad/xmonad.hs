@@ -14,6 +14,7 @@ myManageHook = composeAll
     , resource =? "slack"      --> doShift "3:slack"
     , resource =? "nm-connection-editor" --> doFloat
     , resource =? "pavucontrol" --> doFloat
+    , resource =? "JetBrains Toolbox" --> doFloat
     ]
 
 myDmenu = "dmenu_run -nb \"#1d2021\" -sb \"#fabd2f\" -nf \"#d5c4a1\" -sf \"#1d2021\" -fn \"Hack:pixelsize=16\""
