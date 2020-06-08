@@ -37,6 +37,7 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true \
 
 pasystray &
 nm-applet &
+blueman-applet &
 xrandr -s 1920x1080
 xsetroot -cursor_name left_ptr
 # dim screen after 9:50, lock after 10 min
