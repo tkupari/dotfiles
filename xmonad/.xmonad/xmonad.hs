@@ -4,6 +4,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders(smartBorders)
+import XMonad.Layout.ThreeColumns
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 import XMonad.Util.NamedScratchpad
@@ -11,20 +12,21 @@ import System.IO
 
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
-    , resource =? "slack"      --> doShift "3:slack"
     , resource =? "nm-connection-editor" --> doFloat
     , resource =? "pavucontrol" --> doFloat
     , resource =? "JetBrains Toolbox" --> doFloat
+    , resource =? "blueman-manager" --> doFloat
     ]
 
 myDmenu = "dmenu_run -nb \"#1d2021\" -sb \"#fabd2f\" -nf \"#d5c4a1\" -sf \"#1d2021\" -fn \"Hack:pixelsize=16\""
 myModMask = mod4Mask
-myWorkspaces = ["1:web", "2:term", "3:slack"] ++ map show [4..9]
+myWorkspaces = ["1:web", "2:term"] ++ map show [3..9]
 myNormalBorderColor = "#665c54"
 myFocusedBorderColor = "#d5c4a1"
 
 myScratchpads = [ NS "irssi" spawnIrssi findIrssi manageIrssi
-                , NS "spotify" spawnSpotify findSpotify manageSpotify
+                , NS "spotify" "spotify" (resource =? "spotify") defaultFloating
+                , NS "slack" "slack" (resource =? "slack") defaultFloating
                 ]
   where
   spawnIrssi = "alacritty --class irssi --title irssi"
@@ -35,15 +37,19 @@ myScratchpads = [ NS "irssi" spawnIrssi findIrssi manageIrssi
                 w = 0.5
                 t = 0.25
                 l = 0.25
-  spawnSpotify = "spotify"
-  findSpotify = resource =? "spotify"
-  manageSpotify = defaultFloating -- FIXME: xprops are not set on launch?
+
+myLayout = tiled ||| Full ||| ThreeColMid 1 (3/100) (1/2)
+  where
+    tiled   = Tall nmaster delta ratio
+    nmaster = 1
+    ratio   = 1/2
+    delta   = 3/100
 
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ docks defaultConfig
         { manageHook = insertPosition Below Newer <+> myManageHook <+> namedScratchpadManageHook myScratchpads <+> manageHook defaultConfig
-        , layoutHook = avoidStruts $ smartBorders( layoutHook defaultConfig )
+        , layoutHook = avoidStruts $ smartBorders( myLayout )
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
@@ -68,4 +74,5 @@ main = do
         , ("M-S-<Space>", spawn "toggle_keyboard")
         , ("M-i", namedScratchpadAction myScratchpads "irssi")
         , ("M-m", namedScratchpadAction myScratchpads "spotify")
+        , ("M-s", namedScratchpadAction myScratchpads "slack")
         ]
