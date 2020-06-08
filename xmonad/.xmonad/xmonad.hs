@@ -71,7 +71,7 @@ main = do
         , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
         , ("<XF86MonBrightnessUp>", spawn "lux -a 10%")
         , ("<XF86MonBrightnessDown>", spawn "lux -s 10%")
-        , ("M-S-<Space>", spawn "toggle_keyboard")
+        , ("M-C-<Space>", spawn "toggle_keyboard")
         , ("M-i", namedScratchpadAction myScratchpads "irssi")
         , ("M-m", namedScratchpadAction myScratchpads "spotify")
         , ("M-s", namedScratchpadAction myScratchpads "slack")
