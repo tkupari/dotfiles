@@ -75,4 +75,5 @@ main = do
         , ("M-c", namedScratchpadAction myScratchpads "irssi")
         , ("M-x", namedScratchpadAction myScratchpads "spotify")
         , ("M-s", namedScratchpadAction myScratchpads "slack")
+        , ("M-S-a", spawn "autorandr -c")
         ]
