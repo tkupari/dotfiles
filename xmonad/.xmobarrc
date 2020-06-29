@@ -1,4 +1,4 @@
-Config { font = "xft:Hack:size=20:antialias=true:style=bold"
+Config { font = "xft:Droid Sans:size=20:antialias=true"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 90
