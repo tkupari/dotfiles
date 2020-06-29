@@ -72,7 +72,7 @@ main = do
         , ("<XF86MonBrightnessUp>", spawn "lux -a 10%")
         , ("<XF86MonBrightnessDown>", spawn "lux -s 10%")
         , ("M-C-<Space>", spawn "toggle_keyboard")
-        , ("M-i", namedScratchpadAction myScratchpads "irssi")
-        , ("M-m", namedScratchpadAction myScratchpads "spotify")
+        , ("M-c", namedScratchpadAction myScratchpads "irssi")
+        , ("M-x", namedScratchpadAction myScratchpads "spotify")
         , ("M-s", namedScratchpadAction myScratchpads "slack")
         ]
