@@ -13,5 +13,5 @@ Config { font = "xft:Droid Sans:size=20:antialias=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %swap% | %battery% | %kbd%    <fc=#ee9a00>%date%</fc> | %EFJY%"
+       , template = "%StdinReader% }{ %cpu% | %memory% | %swap% | %battery% | %kbd% | <fc=#ee9a00>%date%</fc> | %EFJY%"
        }
