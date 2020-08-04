@@ -94,7 +94,7 @@ set nofoldenable          " do not fold automatically
 
 set exrc                  " use extra rc file if found
 
-let mapleader=","
+let mapleader=" "
 
 nnoremap <esc><esc> :noh<CR>
 
@@ -117,9 +117,6 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader><leader> <C-^>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-" fold with space
-nnoremap <Space> za
 
 " evaluate ruby code in editor
 nmap <buffer> <F4> <Plug>(xmpfilter-run)
