@@ -34,20 +34,6 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-" pip install neovim in these virtualens
-let g:python3_host_prog=expand("~/.local/share/virtualenvs/neovim3/bin/python")
-
-set completeopt-=preview               " do not open window for function params etc
-let g:jedi#completions_enabled = 0     " do not use vim-jedi completions
-let g:deoplete#enable_at_startup = 1
-
-let g:ale_linters = {
-      \  'python': ['flake8'],
-      \  'javascript': ['eslint'],
-      \  'scala': [],
-      \}
-let g:ale_lint_on_insert_leave = 1
-let g:ale_lint_on_text_changed = 'normal'
 let test#python#runner = 'pytest'      " Always use pytest to run python tests
 
 " use tab for completion
@@ -116,8 +102,6 @@ nnoremap <leader>b :Buffers<CR>
 " swap to previous buffer with ,,
 nnoremap <leader><leader> <C-^>
 
-nnoremap <C-n> :NERDTreeToggle<CR>
-
 " evaluate ruby code in editor
 nmap <buffer> <F4> <Plug>(xmpfilter-run)
 xmap <buffer> <F4> <Plug>(xmpfilter-run)
@@ -125,10 +109,6 @@ imap <buffer> <F4> <Plug>(xmpfilter-run)
 nmap <buffer> <F3> <Plug>(xmpfilter-mark)
 xmap <buffer> <F3> <Plug>(xmpfilter-mark)
 imap <buffer> <F3> <Plug>(xmpfilter-mark)
-
-" ALE bindings
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " get fzf files with ag, it will use gitignore to hide files
 " we also want to see dotfiles, so use --hidden
