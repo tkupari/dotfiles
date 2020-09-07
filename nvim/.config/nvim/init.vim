@@ -102,14 +102,6 @@ nnoremap <leader>b :Buffers<CR>
 " swap to previous buffer with ,,
 nnoremap <leader><leader> <C-^>
 
-" evaluate ruby code in editor
-nmap <buffer> <F4> <Plug>(xmpfilter-run)
-xmap <buffer> <F4> <Plug>(xmpfilter-run)
-imap <buffer> <F4> <Plug>(xmpfilter-run)
-nmap <buffer> <F3> <Plug>(xmpfilter-mark)
-xmap <buffer> <F3> <Plug>(xmpfilter-mark)
-imap <buffer> <F3> <Plug>(xmpfilter-mark)
-
 " get fzf files with ag, it will use gitignore to hide files
 " we also want to see dotfiles, so use --hidden
 " note that .git needs to be added to .agignore in this case
