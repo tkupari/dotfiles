@@ -15,6 +15,7 @@ fi
 
 export EDITOR=vim
 export GIT_EDITOR=vim
+export REACT_EDITOR=none
 
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
