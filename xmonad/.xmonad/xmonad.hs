@@ -3,6 +3,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders(smartBorders)
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.Run(spawnPipe)
@@ -10,8 +11,9 @@ import XMonad.Util.EZConfig(additionalKeys, additionalKeysP)
 import XMonad.Util.NamedScratchpad
 import System.IO
 
-myManageHook = composeAll
-    [ className =? "Gimp"      --> doFloat
+myManageHook = insertPosition Below Newer <+> composeAll
+    [ isDialog --> doF W.swapUp
+    , className =? "Gimp"      --> doFloat
     , resource =? "nm-connection-editor" --> doFloat
     , resource =? "pavucontrol" --> doFloat
     , resource =? "JetBrains Toolbox" --> doFloat
@@ -48,7 +50,7 @@ myLayout = tiled ||| Full ||| ThreeColMid 1 (3/100) (1/2)
 main = do
     xmproc <- spawnPipe "xmobar"
     xmonad $ docks defaultConfig
-        { manageHook = insertPosition Below Newer <+> myManageHook <+> namedScratchpadManageHook myScratchpads <+> manageHook defaultConfig
+        { manageHook = myManageHook <+> namedScratchpadManageHook myScratchpads <+> manageHook defaultConfig
         , layoutHook = avoidStruts $ smartBorders( myLayout )
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
