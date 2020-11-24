@@ -4,8 +4,12 @@ syntax on
 set hidden        " allow buffer switching if there are changes
 
 " disable some vim-polygot packages to prevent conflicts
+let g:polyglot_disabled = ['go']
 
 call plug#begin('~/.local/share/nvim/plugged')
+" language specific plugins
+Plug 'fatih/vim-go'
+
 " Basic syntax etc for most languages
 Plug 'sheerun/vim-polyglot'
 
