@@ -20,8 +20,8 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'daviesjamie/vim-base16-lightline'
 
-" base16 colorschemes
-Plug 'chriskempson/base16-vim'
+" gruvbox
+Plug 'gruvbox-community/gruvbox'
 
 " opening files etc.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -43,10 +43,7 @@ let test#python#runner = 'pytest'      " Always use pytest to run python tests
 " use tab for completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-let base16colorspace=256
-
-" use base16-shell to create the colorscheme file
-source ~/.vimrc_background
+colorscheme gruvbox
 
 let g:lightline = {
       \ 'colorscheme': 'base16'
