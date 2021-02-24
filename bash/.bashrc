@@ -27,10 +27,6 @@ if [ -f /usr/local/etc/profile.d/z.sh ]; then
   . /usr/local/etc/profile.d/z.sh
 fi
 
-if [ -f /usr/bin/liquidprompt ]; then
-  . /usr/bin/liquidprompt
-fi
-
 # Helper to see if a command exists
 command_exists () {
   type "$1" &> /dev/null ;
@@ -63,10 +59,6 @@ export LANG=en_US.UTF-8
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-if [ -f /usr/share/liquidprompt/liquidprompt ]; then
-  # Only load liquidprompt in interactive shells, not from a script or from scp
-  echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
-fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 
@@ -79,3 +71,7 @@ stty -ixon
 . $HOME/.asdf/completions/asdf.bash
 
 export HISTCONTROL=ignoreboth
+
+if command_exists starship ; then
+  eval "$(starship init bash)"
+fi
