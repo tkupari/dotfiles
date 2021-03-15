@@ -4,6 +4,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders(smartBorders)
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.Run(spawnPipe)
@@ -19,6 +20,7 @@ myManageHook = insertPosition Below Newer <+> composeAll
     , resource =? "JetBrains Toolbox" --> doFloat
     , resource =? "blueman-manager" --> doFloat
     ]
+
 
 myDmenu = "dmenu_run -nb \"#1d2021\" -sb \"#fabd2f\" -nf \"#d5c4a1\" -sf \"#1d2021\" -fn \"Hack:pixelsize=16\""
 myModMask = mod4Mask
@@ -56,6 +58,7 @@ main = do
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
+        , startupHook = setWMName "LG3D"
         , modMask = myModMask
         , terminal = "alacritty"
         , workspaces = myWorkspaces
