@@ -16,12 +16,11 @@ Plug 'sheerun/vim-polyglot'
 " commenting
 Plug 'tpope/vim-commentary'
 
-" simple pretty statusline
-Plug 'itchyny/lightline.vim'
-Plug 'daviesjamie/vim-base16-lightline'
-
 " gruvbox
 Plug 'gruvbox-community/gruvbox'
+"
+" simple pretty statusline
+Plug 'itchyny/lightline.vim'
 
 " opening files etc.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -46,7 +45,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 colorscheme gruvbox
 
 let g:lightline = {
-      \ 'colorscheme': 'base16'
+      \ 'colorscheme': 'gruvbox'
       \ }
 
 if has('nvim')
