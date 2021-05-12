@@ -48,6 +48,8 @@ let g:lightline = {
       \ 'colorscheme': 'gruvbox'
       \ }
 
+let g:fzf_layout = { 'down': '50%' }
+
 if has('nvim')
   set termguicolors
 else
