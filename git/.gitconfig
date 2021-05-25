@@ -1,8 +1,22 @@
 [alias]
 	co = checkout
 	st = status
-        l = log --pretty=format:'%C(yellow)%h %Cblue%>(12,trunc)%ad %Cgreen%<(7)%aN%C(auto)%d %s' --date=relative
+	l = log --pretty=format:'%C(yellow)%h %Cblue%>(12,trunc)%ad %Cgreen%<(7)%aN%C(auto)%d %s' --date=relative
+	h = !git l -n5
 	dc = diff --cached
-        la = !git l --all --decorate --graph
+	la = !git l --all --decorate --graph
+	ha = !git h --all --decorate --graph
 [core]
-        abbrev = 8
+	abbrev = 8
+	excludesfile = /home/teemu/.gitignore
+[user]
+	email = email@example.com
+	name = John Doe
+[includeIf "gitdir:work/"]
+  path = .gitconfig-mycompany
+[includeIf "gitdir:work/customer1/"]
+	path = .gitconfig-customer1
+[includeIf "gitdir:work/customer2/"]
+	path = .gitconfig-customer2
+[pull]
+	rebase = false
