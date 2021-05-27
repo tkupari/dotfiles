@@ -35,6 +35,9 @@ Plug 'janko-m/vim-test'
 " git stuff
 Plug 'tpope/vim-fugitive'
 
+" vimwiki for (temporary) notes
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 let test#python#runner = 'pytest'      " Always use pytest to run python tests
@@ -79,6 +82,8 @@ set smartcase
 set foldmethod=indent
 set foldlevelstart=1
 set nofoldenable          " do not fold automatically
+
+let g:vimwiki_folding = 'list'
 
 set exrc                  " use extra rc file if found
 
