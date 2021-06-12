@@ -84,6 +84,14 @@ keys = [
     Key([mod], "t", lazy.window.disable_floating(), desc="Tile floating window"),
     Key([mod, "control"], "space", lazy.spawn("toggle_keyboard"),
         desc="Toggle keyboard layout"),
+
+    Key([mod, "shift"], "z", lazy.spawn("lock_and_suspend"),
+        desc="lock screen"),
+
+    Key([mod, "shift"], "a", lazy.spawn("autorandr -c"),
+        desc="autorandr detected layout"),
+    Key([mod, "shift", "control"], "a", lazy.spawn("autorandr -l internal"),
+        desc="autorandr internal layout"),
 ]
 
 groups = [Group(i) for i in "123456789"]
