@@ -32,8 +32,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 10 --transparent true --tint 0x000000 --height 21 --alpha 0 &
+# trayer --edge top --align right --SetDockType true --SetPartialStrut true \
+#  --expand true --width 10 --transparent true --tint 0x000000 --height 21 --alpha 0 &
 
 unclutter &
 pasystray &
@@ -48,4 +48,5 @@ xset +dpms dpms 610 610 610
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- dunst_lock &
 picom &
 nitrogen --restore
-exec xmonad
+# exec xmonad
+exec qtile
