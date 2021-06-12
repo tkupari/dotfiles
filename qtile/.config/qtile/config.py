@@ -78,10 +78,12 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
+    Key([mod], "r", lazy.spawn("dmenu_run -fn \"Hack:pixelsize=16\""),
         desc="Spawn a command using a prompt widget"),
 
     Key([mod], "t", lazy.window.disable_floating(), desc="Tile floating window"),
+    Key([mod, "control"], "space", lazy.spawn("toggle_keyboard"),
+        desc="Toggle keyboard layout"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -126,11 +128,10 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-                widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -138,9 +139,12 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(),
+                widget.CPU(format="CPU {load_percent}%"),
+                widget.Memory(format="Mem {MemPercent}% Swap {SwapPercent}%"),
+                widget.KeyboardLayout(),
+                widget.Battery(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
+                widget.Systray(),
             ],
             24,
         ),
