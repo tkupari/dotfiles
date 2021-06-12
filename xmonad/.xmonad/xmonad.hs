@@ -66,9 +66,8 @@ main = do
         , focusedBorderColor = myFocusedBorderColor
         } `additionalKeys`
         [ ((myModMask .|. shiftMask, xK_z), spawn "lock_and_suspend")
-        , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((myModMask, xK_b), sendMessage ToggleStruts)
-        , ((0, xK_Print), spawn "scrot")
+        , ((0, xK_Print), spawn "flameshot gui")
         , ((myModMask, xK_p), spawn myDmenu)
         ] `additionalKeysP`
         [ ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
