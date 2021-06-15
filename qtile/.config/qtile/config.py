@@ -27,7 +27,7 @@
 from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget, extension
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -101,10 +101,13 @@ keys = [
         desc="autorandr detected layout"),
     Key([mod, "shift", "control"], "a", lazy.spawn("autorandr -l internal"),
         desc="autorandr internal layout"),
+
+    Key([mod], "c", lazy.group['scratchpad'].dropdown_toggle('term')),
+    Key([mod], "s", lazy.group['scratchpad'].dropdown_toggle('slack')),
+    Key([mod], "x", lazy.group['scratchpad'].dropdown_toggle('spotify')),
 ]
 
 groups = [Group(i) for i in "123456789"]
-
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
@@ -119,6 +122,40 @@ for i in groups:
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
         #     desc="move focused window to group {}".format(i.name)),
     ])
+
+scratchpad = ScratchPad("scratchpad", [
+    DropDown(
+        "slack",
+        "slack",
+        x=0.1,
+        y=0.1,
+        width=0.5,
+        height=0.7,
+        opacity=1.0,
+        on_focus_lost_hide=False,
+    ),
+    DropDown(
+        "term",
+        "alacritty",
+        x=0.25,
+        y=0.25,
+        width=0.5,
+        height=0.5,
+        opacity=1.0,
+        on_focus_lost_hide=False,
+    ),
+    DropDown(
+        "spotify",
+        "spotify",
+        x=0.1,
+        y=0.1,
+        width=0.8,
+        height=0.8,
+        opacity=1.0,
+        on_focus_lost_hide=False,
+    )
+])
+groups.append(scratchpad)
 
 layouts = [
     layout.Columns(border_focus_stack='#d75f5f'),
