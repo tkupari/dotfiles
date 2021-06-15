@@ -26,7 +26,7 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -78,10 +78,19 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn("dmenu_run -fn \"Hack:pixelsize=16\""),
+    Key([mod], "r", lazy.run_extension(
+        extension.DmenuRun(
+            dmenu_font="Hack:pixelsize=18",
+            dmenu_ignorecase=True
+        )),
         desc="Spawn a command using a prompt widget"),
+    Key([mod], "t", lazy.run_extension(
+        extension.WindowList(
+            dmenu_font="Hack:pixelsize=18",
+            dmenu_ignorecase=True,
+        )),
+        desc="Swap window"),
 
-    Key([mod], "t", lazy.window.disable_floating(), desc="Tile floating window"),
     Key([mod, "control"], "space", lazy.spawn("toggle_keyboard"),
         desc="Toggle keyboard layout"),
 
@@ -165,7 +174,8 @@ mouse = [
          start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
+    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Click([mod, "shift"], "Button2", lazy.window.disable_floating()),
 ]
 
 dgroups_key_binder = None
