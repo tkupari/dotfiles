@@ -31,6 +31,12 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, 
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+
+mycolors = {
+    'border_focus': '#888888',
+    'border_focus_stack': '#DDDDDD',
+    'border_normal': '#222222',
+}
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -158,7 +164,12 @@ scratchpad = ScratchPad("scratchpad", [
 groups.append(scratchpad)
 
 layouts = [
-    layout.Columns(border_focus_stack='#d75f5f'),
+    layout.Columns(
+        border_focus=mycolors['border_focus'],
+        border_focus_stack=mycolors['border_focus_stack'],
+        border_normal=mycolors['border_normal'],
+        border_normal_stack=mycolors['border_normal'],
+    ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -221,16 +232,20 @@ main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-])
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class='confirmreset'),  # gitk
+        Match(wm_class='makebranch'),  # gitk
+        Match(wm_class='maketag'),  # gitk
+        Match(wm_class='ssh-askpass'),  # ssh-askpass
+        Match(title='branchdialog'),  # gitk
+        Match(title='pinentry'),  # GPG key password entry
+    ],
+    border_focus=mycolors['border_focus'],
+    border_normal=mycolors['border_normal'],
+)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
