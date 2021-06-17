@@ -84,6 +84,7 @@ set foldlevelstart=1
 set nofoldenable          " do not fold automatically
 
 let g:vimwiki_folding = 'list'
+let g:vimwiki_global_ext = 0
 
 set exrc                  " use extra rc file if found
 
