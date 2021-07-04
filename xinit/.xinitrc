@@ -48,5 +48,4 @@ xset +dpms dpms 610 610 610
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- dunst_lock &
 picom &
 nitrogen --restore
-# exec xmonad
-exec qtile
+exec awesome
