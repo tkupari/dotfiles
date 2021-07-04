@@ -49,6 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.font = "Droid Sans 16"
 beautiful.menu_height = 16
 beautiful.menu_width = 150
+beautiful.systray_icon_spacing = 2
 
 
 -- This is used later as the default terminal and editor to run.
