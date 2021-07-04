@@ -4,3 +4,5 @@ xmonad/.xmonad/xmonad-x86_64-linux
 *.hi
 *.errors
 __pycache__
+bin/bin/idea*
+bin/bin/pycharm
