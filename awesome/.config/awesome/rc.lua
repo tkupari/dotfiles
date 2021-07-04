@@ -334,7 +334,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "r", function () awful.spawn("dmenu_run -fn 'Droid Sans Mono-18'") end,
               {description = "dmenu runner", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "z", function () awful.spawn("lock_and_suspend") end,
-              {description = "lock screen", grourp = "awesome"})
+              {description = "lock screen"}),
+    awful.key({ modkey, "Control" }, "space", function () awful.spawn("toggle_keyboard") end,
+              {description = "toggle keyboard layout"})
 )
 
 clientkeys = gears.table.join(
@@ -346,8 +348,8 @@ clientkeys = gears.table.join(
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "client"}),
+    -- awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+    --           {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
@@ -442,7 +444,9 @@ clientbuttons = gears.table.join(
     awful.button({ modkey }, 3, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.resize(c)
-    end)
+    end),
+    awful.button({ modkey, }, 2,  awful.client.floating.toggle                     ,
+              {description = "toggle floating", group = "client"})
 )
 
 -- Set keys
