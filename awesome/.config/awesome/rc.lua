@@ -332,7 +332,9 @@ globalkeys = gears.table.join(
     --           {description = "show the menubar", group = "launcher"})
 
     awful.key({ modkey }, "r", function () awful.spawn("dmenu_run -fn 'Droid Sans Mono-18'") end,
-              {description = "dmenu runner", group = "launcher"})
+              {description = "dmenu runner", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "z", function () awful.spawn("lock_and_suspend") end,
+              {description = "lock screen", grourp = "awesome"})
 )
 
 clientkeys = gears.table.join(
