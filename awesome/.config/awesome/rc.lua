@@ -50,6 +50,8 @@ beautiful.font = "Droid Sans 16"
 beautiful.menu_height = 16
 beautiful.menu_width = 150
 beautiful.systray_icon_spacing = 2
+beautiful.taglist_squares_sel = nil
+beautiful.taglist_squares_unsel = nil
 beautiful.wallpaper = "wallpapers/arch linux black background 1440x900 wallpaper Moon Wallpapers.jpg"
 
 -- This is used later as the default terminal and editor to run.
@@ -189,7 +191,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
-        filter  = awful.widget.taglist.filter.all,
+        filter  = awful.widget.taglist.filter.noempty,
         buttons = taglist_buttons
     }
 
