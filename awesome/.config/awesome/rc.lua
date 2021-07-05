@@ -50,7 +50,7 @@ beautiful.font = "Droid Sans 16"
 beautiful.menu_height = 16
 beautiful.menu_width = 150
 beautiful.systray_icon_spacing = 2
-
+beautiful.wallpaper = "wallpapers/arch linux black background 1440x900 wallpaper Moon Wallpapers.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -162,7 +162,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.centered(wallpaper, s)
     end
 end
 
