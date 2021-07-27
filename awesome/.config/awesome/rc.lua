@@ -332,6 +332,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "z", function () awful.spawn("lock_and_suspend") end,
               {description = "lock screen"}),
     awful.key({ modkey, "Control" }, "space", function () awful.spawn("toggle_keyboard") end,
+              {description = "toggle keyboard layout"}),
+
+    awful.key({ modkey, "Shift" }, "a", function () awful.spawn("autorandr -c") end,
+              {description = "toggle keyboard layout"}),
+    awful.key({ modkey, "Shift", "Control" }, "a", function () awful.spawn("autorandr -l internal") end,
               {description = "toggle keyboard layout"})
 )
 
