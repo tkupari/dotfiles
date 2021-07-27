@@ -38,6 +38,7 @@ fi
 unclutter &
 pasystray &
 nm-applet &
+cbatticon &
 blueman-applet &
 xrandr -s 1920x1080
 xsetroot -cursor_name left_ptr
