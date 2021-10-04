@@ -40,8 +40,6 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-let test#python#runner = 'pytest'      " Always use pytest to run python tests
-
 " use tab for completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
