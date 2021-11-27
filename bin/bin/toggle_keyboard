@@ -15,7 +15,7 @@ else
 #       setxkbmap se
 #       ;;
     *)
-    $COMMAND us
+    $COMMAND -variant altgr-intl us
     xmodmap ~/.Xmodmap
     ;;
   esac
