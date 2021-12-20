@@ -51,6 +51,7 @@ fi
 
 alias t='tmux attach || tmux new'
 alias xclip='xclip -selection clipboard'
+alias cdroot='cd $(git rev-parse --show-toplevel)'
 
 # fix python locale.getlocale
 export LC_ALL=en_US.UTF-8
