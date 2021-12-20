@@ -337,9 +337,12 @@ globalkeys = gears.table.join(
               {description = "toggle keyboard layout"}),
 
     awful.key({ modkey, "Shift" }, "a", function () awful.spawn("autorandr -c") end,
-              {description = "toggle keyboard layout"}),
+              {description = "use autodetected display configuration"}),
     awful.key({ modkey, "Shift", "Control" }, "a", function () awful.spawn("autorandr -l internal") end,
-              {description = "toggle keyboard layout"})
+              {description = "use internal display only"}),
+
+    awful.key({ modkey, "Shift" }, "s", function () awful.spawn("flameshot gui") end,
+              {description = "take screenshot"})
 )
 
 clientkeys = gears.table.join(
