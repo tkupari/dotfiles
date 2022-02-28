@@ -60,7 +60,7 @@ export LANG=en_US.UTF-8
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 
-export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
 
 # disable ctrl-s
 stty -ixon
