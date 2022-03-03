@@ -16,11 +16,12 @@ Plug 'sheerun/vim-polyglot'
 " commenting
 Plug 'tpope/vim-commentary'
 
-" gruvbox
-Plug 'gruvbox-community/gruvbox'
-"
+" base16 colorscheme
+Plug 'chriskempson/base16-vim'
+
 " simple pretty statusline
 Plug 'itchyny/lightline.vim'
+Plug 'daviesjamie/vim-base16-lightline'
 
 " opening files etc.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -43,10 +44,13 @@ call plug#end()
 " use tab for completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-colorscheme gruvbox
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox'
+      \ 'colorscheme': 'base16'
       \ }
 
 let g:fzf_layout = { 'down': '50%' }
