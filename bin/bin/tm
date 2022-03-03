@@ -1,19 +1,24 @@
 # !/bin/bash
+#
+# This script will start a TMUX session in a directory and switch/attach to
+# the session. If a session already exists, attach to the existing session.
+
+set -e
 
 DIR=${1:-$PWD}
 BASENAME=$(basename $DIR)
-echo $BASENAME
+
+pushd $DIR > /dev/null
 
 if ! tmux has-session -t $BASENAME; then
-  echo creating session
-  pushd $DIR
+  echo session $BASENAME not found, creating new session 
   tmux new-session -s $BASENAME -d
 fi
 
 if [ -n "$TMUX" ]; then
-  echo already in tmux
+  echo switching to session $BASENAME
   tmux switch-client -t $BASENAME
 else
-  echo not in tmux
+  echo attaching session $BASENAME
   tmux attach-session -t $BASENAME
 fi
