@@ -115,7 +115,7 @@ nnoremap <leader><leader> <C-^>
 " get fzf files with ag, it will use gitignore to hide files
 " we also want to see dotfiles, so use --hidden
 " note that .git needs to be added to .agignore in this case
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore-dir node_modules --ignore-dir .git'
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden --ignore-dir node_modules'
 
 " paste from yank register
 nnoremap <leader>p "0p
