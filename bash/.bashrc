@@ -49,7 +49,7 @@ if [ -f ~/.profile_secrets ]; then
   . ~/.profile_secrets
 fi
 
-alias t='tmux attach || tmux new'
+alias t='tmux attach || tm'
 alias xclip='xclip -selection clipboard'
 alias cdroot='cd $(git rev-parse --show-toplevel)'
 
