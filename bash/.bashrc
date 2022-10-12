@@ -10,22 +10,13 @@ elif [[ $OSTYPE == "linux-gnu" ]]; then
   alias ls='ls --color=auto'
 fi
 
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-[ -f /etc/bash_completion ] && . /etc/bash_completion
+[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 export EDITOR=vim
 export GIT_EDITOR=vim
 export REACT_EDITOR=none
 
 if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
-
-if [ -f ~/.config/z/z.sh ]; then
-  . ~/.config/z/z.sh
-fi
-
-if [ -f /usr/local/etc/profile.d/z.sh ]; then
-  . /usr/local/etc/profile.d/z.sh
-fi
 
 # Helper to see if a command exists
 command_exists () {
