@@ -101,9 +101,10 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
+-- Disable mouse
+vim.o.mouse = ''
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -118,6 +119,7 @@ vim.o.smartcase = true
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+vim.wo.colorcolumn = "120"
 
 -- Set colorscheme
 vim.o.termguicolors = true
