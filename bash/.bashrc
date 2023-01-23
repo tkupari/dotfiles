@@ -71,8 +71,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         source "$BASE16_SHELL/profile_helper.sh"
 
+. "$HOME/.cargo/env"
+
 source <(kubectl completion bash)
 source <(helm completion bash)
-. "$HOME/.cargo/env"
 source <(rustup completions bash)
 source <(rustup completions bash cargo)
+source <(kind completion bash)
+source <(k3d completion bash)
