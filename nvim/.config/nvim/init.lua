@@ -99,6 +99,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- Set highlight on search
 vim.o.hlsearch = false
 
+-- Show hidden chars
+vim.o.list = true
+
 -- Make line numbers default
 vim.wo.number = true
 vim.wo.relativenumber = true
