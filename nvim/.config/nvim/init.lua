@@ -6,6 +6,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
   vim.cmd [[packadd packer.nvim]]
 end
+vim.cmd [[au BufRead,BufNewFile *.jq setfiletype jq]]
 
 require('packer').startup(function(use)
   -- Package manager
@@ -158,6 +159,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
@@ -228,7 +230,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help',
+    'elixir', 'heex', 'eex', 'jq' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -348,9 +351,10 @@ local servers = {
   gopls = {},
   pyright = {},
   rust_analyzer = {},
+  elixirls = {},
   -- tsserver = {},
 
-  sumneko_lua = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
