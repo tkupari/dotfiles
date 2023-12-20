@@ -38,6 +38,11 @@ if [ -f ~/.profile_secrets ]; then
   . ~/.profile_secrets
 fi
 
+# Add all sensitive stuff to different file
+if [ -f ~/.config/rg/ripgreprc ]; then
+  export RIPGREP_CONFIG_PATH=~/.config/rg/ripgreprc
+fi
+
 alias t='tmux attach || tm'
 alias xclip='xclip -selection clipboard'
 alias cdroot='cd $(git rev-parse --show-toplevel)'
