@@ -79,3 +79,5 @@ source <(rustup completions bash)
 source <(rustup completions bash cargo)
 source <(kind completion bash)
 source <(k3d completion bash)
+source <(aws-vault --completion-script-bash)
+complete -C '$(which aws_completer)' aws
