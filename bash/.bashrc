@@ -2,8 +2,6 @@
 
 set -o vi
 
-export PATH=$PATH:~/bin
-
 if [[ $OSTYPE == "darwin"* ]]; then
   export CLICOLOR=true
 elif [[ $OSTYPE == "linux-gnu" ]]; then
@@ -81,3 +79,5 @@ source <(kind completion bash)
 source <(k3d completion bash)
 source <(aws-vault --completion-script-bash)
 complete -C '$(which aws_completer)' aws
+
+export PATH=$PATH:~/bin
