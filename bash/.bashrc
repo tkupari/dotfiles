@@ -28,8 +28,8 @@ if command_exists nvim ; then
   alias vim='nvim'
 fi
 
-if command_exists exa ; then
-  alias ls='exa'
+if command_exists eza ; then
+  alias ls='eza'
 fi
 alias ll="ls -l"
 
