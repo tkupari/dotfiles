@@ -68,12 +68,6 @@ if command_exists starship ; then
   eval "$(starship init bash)"
 fi
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        source "$BASE16_SHELL/profile_helper.sh"
-
 . "$HOME/.cargo/env"
 
 source <(kubectl completion bash)
@@ -84,5 +78,7 @@ source <(kind completion bash)
 source <(k3d completion bash)
 source <(aws-vault --completion-script-bash)
 complete -C '$(which aws_completer)' aws
+
+eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:~/bin
