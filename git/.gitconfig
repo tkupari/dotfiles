@@ -12,11 +12,13 @@
 [user]
 	email = email@example.com
 	name = John Doe
-[includeIf "gitdir:work/"]
-  path = .gitconfig-mycompany
-[includeIf "gitdir:work/customer1/"]
-	path = .gitconfig-customer1
-[includeIf "gitdir:work/customer2/"]
-	path = .gitconfig-customer2
+; [includeIf "gitdir:work/"]
+;   path = .gitconfig-mycompany
+; [includeIf "gitdir:work/customer1/"]
+; 	path = .gitconfig-customer1
+; [includeIf "gitdir:work/customer2/"]
+; 	path = .gitconfig-customer2
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
