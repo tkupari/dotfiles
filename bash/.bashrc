@@ -81,6 +81,8 @@ source <(k3d completion bash)
 source <(aws-vault --completion-script-bash)
 complete -C '$(which aws_completer)' aws
 
+source /usr/share/fzf/shell/key-bindings.bash
+
 eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:~/bin
