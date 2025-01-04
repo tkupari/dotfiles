@@ -207,39 +207,49 @@ font-thicken = false
 adjust-cell-width = 
 
 adjust-cell-height = 
-# Distance in pixels from the bottom of the cell to the text baseline.
+# Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # Increase to move baseline UP, decrease to move baseline DOWN.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-font-baseline = 
 
-# Distance in pixels from the top of the cell to the top of the underline.
+# Distance in pixels or percentage adjustment from the top of the cell to the top of the underline.
 # Increase to move underline DOWN, decrease to move underline UP.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-underline-position = 
 
 # Thickness in pixels of the underline.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-underline-thickness = 
 
-# Distance in pixels from the top of the cell to the top of the strikethrough.
+# Distance in pixels or percentage adjustment from the top of the cell to the top of the strikethrough.
 # Increase to move strikethrough DOWN, decrease to move underline UP.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-strikethrough-position = 
 
-# Thickness in pixels of the strikethrough.
+# Thickness in pixels or percentage adjustment of the strikethrough.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-strikethrough-thickness = 
 
-# Distance in pixels from the top of the cell to the top of the overline.
+# Distance in pixels or percentage adjustment from the top of the cell to the top of the overline.
 # Increase to move overline DOWN, decrease to move underline UP.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-overline-position = 
 
-# Thickness in pixels of the overline.
+# Thickness in pixels or percentage adjustment of the overline.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-overline-thickness = 
 
-# Thickness in pixels of the bar cursor and outlined rect cursor.
+# Thickness in pixels or percentage adjustment of the bar cursor and outlined rect cursor.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-cursor-thickness = 
 
-# Height in pixels of the cursor. Currently applies to all cursor types:
+# Height in pixels or percentage adjustment of the cursor. Currently applies to all cursor types:
 # bar, rect, and outlined rect.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-cursor-height = 
 
-# Thickness in pixels of box drawing characters.
+# Thickness in pixels or percentage adjustment of box drawing characters.
+# See the notes about adjustments in `adjust-cell-width`.
 adjust-box-thickness = 
 
 # The method to use for calculating the cell width of a grapheme cluster.
@@ -312,10 +322,10 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 # The second directory is the `themes` subdirectory of the Ghostty resources
 # directory. Ghostty ships with a multitude of themes that will be installed
-# into this directory. On macOS, this list is in the `Ghostty.app/Contents/
-# Resources/ghostty/themes` directory. On Linux, this list is in the `share/
-# ghostty/themes` directory (wherever you installed the Ghostty "share"
-# directory.
+# into this directory. On macOS, this list is in the
+# `Ghostty.app/Contents/Resources/ghostty/themes` directory. On Linux, this
+# list is in the `share/ghostty/themes` directory (wherever you installed the
+# Ghostty "share" directory.
 # 
 # To see a list of available themes, run `ghostty +list-themes`.
 # 
@@ -691,7 +701,7 @@ cursor-style = block
 # 
 # Valid values are:
 # 
-#   * `` (blank)
+#   * ` ` (blank)
 #   * `true`
 #   * `false`
 # 
@@ -844,7 +854,7 @@ command =
 #     (i.e. by wrapping your command in a shell, setting env vars, etc.).
 #     This is a safety measure to prevent unexpected behavior. If you want
 #     shell integration with a `-e`-executed command, you must either
-#     name your binary appopriately or source the shell integration script
+#     name your binary appropriately or source the shell integration script
 #     manually.
 # 
 initial-command = 
@@ -984,7 +994,25 @@ working-directory =
 # the documentation or using the `ghostty +list-actions` command.
 # 
 # Trigger: `+`-separated list of keys and modifiers. Example: `ctrl+a`,
-# `ctrl+shift+b`, `up`. Some notes:
+# `ctrl+shift+b`, `up`.
+# 
+# Valid keys are currently only listed in the
+# [Ghostty source code](https://github.com/ghostty-org/ghostty/blob/d6e76858164d52cff460fedc61ddf2e560912d71/src/input/key.zig#L255).
+# This is a documentation limitation and we will improve this in the future.
+# A common gotcha is that numeric keys are written as words: i.e. `one`,
+# `two`, `three`, etc. and not `1`, `2`, `3`. This will also be improved in
+# the future.
+# 
+# Valid modifiers are `shift`, `ctrl` (alias: `control`), `alt` (alias: `opt`,
+# `option`), and `super` (alias: `cmd`, `command`). You may use the modifier
+# or the alias. When debugging keybinds, the non-aliased modifier will always
+# be used in output.
+# 
+# Note: The fn or "globe" key on keyboards are not supported as a
+# modifier. This is a limitation of the operating systems and GUI toolkits
+# that Ghostty uses.
+# 
+# Some additional notes for triggers:
 # 
 #   * modifiers cannot repeat, `ctrl+ctrl+a` is invalid.
 # 
@@ -997,15 +1025,6 @@ working-directory =
 #     physical key mapping rather than a logical one. A physical key
 #     mapping responds to the hardware keycode and not the keycode
 #     translated by any system keyboard layouts. Example: "ctrl+physical:a"
-# 
-# Valid modifiers are `shift`, `ctrl` (alias: `control`), `alt` (alias: `opt`,
-# `option`), and `super` (alias: `cmd`, `command`). You may use the modifier
-# or the alias. When debugging keybinds, the non-aliased modifier will always
-# be used in output.
-# 
-# Note: The fn or "globe" key on keyboards are not supported as a
-# modifier. This is a limitation of the operating systems and GUI toolkits
-# that Ghostty uses.
 # 
 # You may also specify multiple triggers separated by `>` to require a
 # sequence of triggers to activate the action. For example,
@@ -1156,7 +1175,7 @@ keybind = ctrl+alt+left=goto_split:left
 keybind = shift+page_down=scroll_page_down
 keybind = ctrl+shift+right=next_tab
 keybind = ctrl+shift+page_up=jump_to_prompt:-1
-keybind = alt+nine=goto_tab:9
+keybind = alt+nine=last_tab
 keybind = ctrl+shift+t=new_tab
 keybind = shift+down=adjust_selection:down
 keybind = super+ctrl+shift+left=resize_split:left,10
@@ -1352,7 +1371,7 @@ window-colorspace = srgb
 # BUG: On Linux with GTK, the calculated window size will not properly take
 # into account window decorations. As a result, the grid dimensions will not
 # exactly match this configuration. If window decorations are disabled (see
-# window-decorations), then this will work as expected.
+# `window-decoration`), then this will work as expected.
 # 
 # Windows smaller than 10 wide by 4 high are not allowed.
 window-height = 0
@@ -1402,6 +1421,16 @@ window-step-resize = false
 # 
 #   * `end` - Insert the new tab at the end of the tab list.
 window-new-tab-position = current
+
+# Background color for the window titlebar. This only takes effect if
+# window-theme is set to ghostty. Currently only supported in the GTK app
+# runtime.
+window-titlebar-background = 
+
+# Foreground color for the window titlebar. This only takes effect if
+# window-theme is set to ghostty. Currently only supported in the GTK app
+# runtime.
+window-titlebar-foreground = 
 
 # This controls when resize overlays are shown. Resize overlays are a
 # transient popup that shows the size of the terminal while the surfaces are
@@ -1462,7 +1491,14 @@ resize-overlay-position = center
 # value larger than this will be clamped to the maximum value.
 resize-overlay-duration = 750ms
 
+# If true, when there are multiple split panes, the mouse selects the pane
+# that is focused. This only applies to the currently focused window; i.e.
+# mousing over a split in an unfocused window will not focus that split
+# and bring the window to front.
+# 
+# Default is false.
 focus-follows-mouse = false
+
 # Whether to allow programs running in the terminal to read/write to the
 # system clipboard (OSC 52, for googling). The default is to allow clipboard
 # reading after prompting the user and allow writing unconditionally.
@@ -1490,6 +1526,15 @@ clipboard-paste-protection = true
 # program has bracketed paste mode enabled (a setting set by the running
 # program, not the terminal emulator).
 clipboard-paste-bracketed-safe = true
+
+# Enables or disabled title reporting (CSI 21 t). This escape sequence
+# allows the running program to query the terminal title. This is a common
+# security issue and is disabled by default.
+# 
+# Warning: This can expose sensitive information at best and enable
+# arbitrary code execution at worst (with a maliciously crafted title
+# and a minor amount of user interaction).
+title-report = false
 
 # The total amount of bytes that can be used for image data (i.e. the Kitty
 # image protocol) per terminal screen. The maximum value is 4,294,967,295
@@ -1566,8 +1611,12 @@ config-file =
 # This configuration can only be set via CLI arguments.
 config-default-files = true
 
-# Confirms that a surface should be closed before closing it. This defaults to
-# true. If set to false, surfaces will close without any confirmation.
+# Confirms that a surface should be closed before closing it.
+# 
+# This defaults to `true`. If set to `false`, surfaces will close without
+# any confirmation. This can also be set to `always`, which will always
+# confirm closing a surface, even if shell integration says a process isn't
+# running.
 confirm-close-surface = true
 
 # Whether or not to quit after the last surface is closed.
@@ -1642,6 +1691,9 @@ initial-window = true
 #   * `center` - Terminal appears at the center of the screen.
 # 
 # Changing this configuration requires restarting Ghostty completely.
+# 
+# Note: There is no default keybind for toggling the quick terminal.
+# To enable this feature, bind the `toggle_quick_terminal` action to a key.
 quick-terminal-position = top
 
 # The screen where the quick terminal should show up.
@@ -2074,7 +2126,7 @@ linux-cgroup-hard-fail = false
 # 
 # If `false`, each new ghostty process will launch a separate application.
 # 
-# The default value is `detect` which will default to `true` if Ghostty
+# The default value is `desktop` which will default to `true` if Ghostty
 # detects that it was launched from the `.desktop` file such as an app
 # launcher (like Gnome Shell)  or by D-Bus activation. If Ghostty is launched
 # from the command line, it will default to `false`.
@@ -2092,7 +2144,7 @@ gtk-single-instance = desktop
 # 
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows.
-gtk-titlebar = false
+gtk-titlebar = true
 
 # Determines the side of the screen that the GTK tab bar will stick to.
 # Top, bottom, left, right, and hidden are supported. The default is top.
