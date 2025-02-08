@@ -6,7 +6,7 @@
 set -e
 
 DIR=${1:-$PWD}
-BASENAME=$(basename $DIR)
+BASENAME=$(basename $(readlink -f $DIR))
 
 pushd $DIR > /dev/null
 
