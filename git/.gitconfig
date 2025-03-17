@@ -41,3 +41,5 @@
 	all = true
 [commit]
 	verbose = true
+[advice]
+	forceDeleteBranch = false
