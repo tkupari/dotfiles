@@ -1,6 +1,5 @@
-font-family = Hack Nerd Font
+font-family = Iosevka
+font-feature = -calt, -liga, -dlig
 font-size = 10
 theme = dark:GruvboxDark,light:GruvboxLight
 window-padding-balance = true
-
-
