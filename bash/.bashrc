@@ -75,3 +75,4 @@ source /usr/share/fzf/shell/key-bindings.bash
 eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:~/bin
+. "$HOME/.cargo/env"
