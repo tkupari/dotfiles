@@ -3,9 +3,9 @@
 set -o vi
 
 if [[ $OSTYPE == "darwin"* ]]; then
-    export CLICOLOR=true
+  export CLICOLOR=true
 elif [[ $OSTYPE == "linux-gnu" ]]; then
-    alias ls='ls --color=auto'
+  alias ls='ls --color=auto'
 fi
 
 [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
@@ -18,29 +18,29 @@ if which direnv >/dev/null; then eval "$(direnv hook bash)"; fi
 
 # Helper to see if a command exists
 command_exists() {
-    type "$1" &>/dev/null
+  type "$1" &>/dev/null
 }
 
 # Use neovim if it's installed
 if command_exists nvim; then
-    export EDITOR=nvim
-    export GIT_EDITOR=nvim
-    alias vim='nvim'
+  export EDITOR=nvim
+  export GIT_EDITOR=nvim
+  alias vim='nvim'
 fi
 
 if command_exists eza; then
-    alias ls='eza'
+  alias ls='eza'
 fi
 alias ll="ls -l"
 
 # Add all sensitive stuff to different file
 if [ -f ~/.profile_secrets ]; then
-    . ~/.profile_secrets
+  . ~/.profile_secrets
 fi
 
 # Add all sensitive stuff to different file
 if [ -f ~/.config/rg/ripgreprc ]; then
-    export RIPGREP_CONFIG_PATH=~/.config/rg/ripgreprc
+  export RIPGREP_CONFIG_PATH=~/.config/rg/ripgreprc
 fi
 
 alias t='tmux attach || tm'
@@ -67,7 +67,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export HISTCONTROL=ignoreboth
 
 if command_exists starship; then
-    eval "$(starship init bash)"
+  eval "$(starship init bash)"
 fi
 
 source /usr/share/fzf/shell/key-bindings.bash
