@@ -78,3 +78,4 @@ export PATH=$PATH:~/bin
 . "$HOME/.cargo/env"
 
 export PODMAN_COMPOSE_WARNING_LOGS=false
+export MANWIDTH=80
