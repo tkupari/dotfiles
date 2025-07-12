@@ -1,6 +1,6 @@
 font-family = Aporetic Sans Mono
 font-feature = -calt, -liga, -dlig
-font-size = 13
+font-size = 10
 theme = dark:GruvboxDark,light:GruvboxLight
 window-padding-balance = true
 window-height = 40
