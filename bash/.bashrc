@@ -79,3 +79,4 @@ export PATH=$PATH:~/bin
 
 export PODMAN_COMPOSE_WARNING_LOGS=false
 export MANWIDTH=80
+export PIPENV_SHELL_FANCY=1
