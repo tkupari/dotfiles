@@ -6,3 +6,4 @@ xmonad/.xmonad/xmonad-x86_64-linux
 __pycache__
 bin/bin/idea*
 bin/bin/pycharm
+ghostty/.config/ghostty/themes/
