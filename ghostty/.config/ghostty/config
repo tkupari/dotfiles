@@ -5,3 +5,4 @@ theme = dark:Gruvbox Dark,light:Gruvbox Light
 window-padding-balance = true
 window-height = 40
 window-width = 130
+keybind = ctrl+,=unbind
